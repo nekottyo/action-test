@@ -1,0 +1,5 @@
+test/テスト:
+  - test/**/test.yml
+
+test:
+  - test/hoge/fuga/piyo.yml
