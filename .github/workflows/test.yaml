@@ -1,0 +1,17 @@
+name: test
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  example:
+    name: test-workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: init
+        id: id
+        run: echo ::set-output name=key::true
+      - name: step1
+        run: echo "step1"
+        if: steps.id.outputs.key == 'false'
+      - name: step2
+        run: echo "step2"
